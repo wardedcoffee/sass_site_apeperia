@@ -1,5 +1,24 @@
+// Variaveis usadas no meu Sass
 $cor-padrao: #c24e4b;
 $cor-auxiliar: blue;
+$cor-branca: #fff;
+
+// Mixins usados no meu Sass
+@mixin border-radius($raio: 0.3em) {
+  -webkit-border-radius: $raio;
+  border-radius: $raio;
+}
+
+@mixin default-shadow {
+  -webkit-box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+}
+
+@mixin image-replacement {
+  text-indent: -9999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
 
 /** Geral **/
 body {
@@ -41,30 +60,30 @@ header .container {
   position: relative;
 }
 
-.menu-opcoes {
+.menu-principal {
   position: absolute;
   right: 0;
-  top: -.5em;
+  top: -0.5em;
   font-size: 1.2em;
   font-weight: lighter;
-}
 
-.menu-opcoes ul {
-  padding-left: 0;
-}
+  ul {
+    padding-left: 0;
+  }
 
-.menu-opcoes li {
-  display: inline-block;
-  width: 5em;
-}
+  li {
+    display: inline-block;
+    width: 5em;
+  }
 
-.menu-opcoes a {
-  color: white;
-  text-decoration: none;
-}
+  a {
+    color: white;
+    text-decoration: none;
 
-.menu-opcoes a:hover {
-  text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 /** Destaque **/
@@ -96,14 +115,12 @@ header .container {
   margin-top: 1em;
   background: $cor-padrao;
   border: 0;
-  padding: .6em;
+  padding: 0.6em;
   font-size: 1.2em;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
-  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  @include border-radius(50px);
+  @include default-shadow;
   font-weight: bold;
 }
-
 
 /** Sobre **/
 .sobre {
@@ -122,7 +139,7 @@ header .container {
 }
 
 .sobre p {
-  font: .9em/1.8 sans-serif;
+  font: 0.9em/1.8 sans-serif;
 }
 
 .sobre p:first-child {
@@ -137,9 +154,7 @@ header .container {
   display: inline-block;
   width: 50px;
   height: 60px;
-  text-indent: -9999px;
-  overflow: hidden;
-  background-repeat: no-repeat;
+  @include image-replacement;
   background-position: center;
   margin: 1em 1.5em 0 0;
 }
@@ -166,7 +181,7 @@ header .container {
 }
 
 .planos h2 {
-  color: #fff;
+  color: $cor-branca;
 }
 
 .plano {
@@ -182,12 +197,12 @@ header .container {
 }
 
 .plano h3 {
-  color: #fff;
+  color: $cor-branca;
   font-size: 1.8em;
   background: $cor-padrao;
   text-align: center;
   height: 2em;
-  padding-top: .6em;
+  padding-top: 0.6em;
   margin-top: 0;
 }
 
@@ -199,38 +214,38 @@ header .container {
 
 .itens-plano {
   padding-left: 1.2em;
-}
 
-.itens-plano li {
-  font-size: 1em;
-  list-style: none;
-  border-bottom: 1px solid #acacac;
-  padding: .5em;
-  width: 14.8em;
-}
+  li {
+    font-size: 1em;
+    list-style: none;
+    border-bottom: 1px solid #acacac;
+    padding: 0.5em;
+    width: 14.8em;
+  }
 
-.itens-plano li:last-child {
-  border: 0;
-}
+  &:last-child {
+    border: 0;
+  }
 
-.itens-plano span {
-  float: right;
+  span {
+    float: right;
+  }
 }
 
 .plano button {
   background: $cor-padrao;
   border: 0;
-  color: #fff;
+  color: $cor-branca;
   width: 210px;
   height: 38px;
   font-size: 1.2em;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
-  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  @include border-radius;
+  @include default-shadow;
   margin-left: 2em;
 }
 
-.icone-check, .icone-x {
+.icone-check,
+.icone-x {
   background: url(../imagens/sprite.png) no-repeat;
   width: 18px;
   height: 18px;
@@ -244,8 +259,6 @@ header .container {
   background-position: -33px -5px;
 }
 
-
-
 /** Blog **/
 .blog {
   display: block;
@@ -256,7 +269,7 @@ header .container {
   content: "";
   background: url(../imagens/fundo.png);
   background-size: 25px 25px;
-  opacity: .15;
+  opacity: 0.15;
   top: 0;
   left: 0;
   bottom: 0;
@@ -307,10 +320,9 @@ form {
 .contato input,
 textarea {
   width: 100%;
-  margin-bottom: .8em;
+  margin-bottom: 0.8em;
   padding: 4px 8px;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
+  @include border-radius;
   border: 2px solid #ccc;
 }
 
@@ -318,13 +330,12 @@ textarea {
   margin: 0 auto;
   background: $cor-padrao;
   border: 0;
-  color: #fff;
+  color: $cor-branca;
   width: 210px;
   height: 38px;
   font-size: 1.2em;
-  -webkit-border-radius: 0.3em;
-  border-radius: 0.3em;
-  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  @include border-radius;
+  @include default-shadow;
 }
 
 /** Footer **/
@@ -336,7 +347,7 @@ footer {
 footer::after {
   content: "";
   background: url(../imagens/fundo-rodape.png);
-  opacity: .02;
+  opacity: 0.02;
   top: 0;
   left: 0;
   bottom: 0;
@@ -392,7 +403,7 @@ footer .container img {
 }
 
 footer a {
-  color: #fff;
+  color: $cor-branca;
   text-decoration: none;
 }
 
@@ -404,9 +415,7 @@ footer a {
   display: block;
   width: 55px;
   height: 55px;
-  text-indent: -9999px;
-  overflow: hidden;
-  background-repeat: no-repeat;
+  @include image-replacement;
   margin-left: 1em;
 }
 
