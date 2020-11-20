@@ -6,8 +6,14 @@ body {
   .container {
     width: 940px;
     margin: 0 auto;
+
+    @media (max-width: 980px) {
+      .container {
+        width: 90%;
+      }
   }
-  
+}
+
   .titulo-secao {
     text-decoration: underline;
     font-size: 2em;

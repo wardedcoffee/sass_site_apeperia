@@ -30,6 +30,6 @@
     padding: 0.6em;
     font-size: 1.2em;
     @include border-radius(50px);
-    @include default-shadow;
+    @extend %default-shadow;
     font-weight: bold;
   }
