@@ -373,7 +373,7 @@ body {
   width: 940px;
   margin: 0 auto; }
   @media (max-width: 980px) {
-    .container .container {
+    .container {
       width: 90%; } }
 
 .titulo-secao {

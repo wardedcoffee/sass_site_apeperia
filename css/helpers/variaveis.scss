@@ -3,9 +3,10 @@ $cor-padrao: darken(#c24e4b, 0);
 $cor-auxiliar: lighten(#ffffbc, 10);
 $cor-branca: #fff;
 
-//adjust-hue();
+$ponto-de-quebra: 980px;
 
-//saturate(); 
+$mq-mobile: "(max-width: 980px)";
 
-//complement();
+
+
 
